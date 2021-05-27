@@ -9,6 +9,7 @@ Learn how JPEG works by reinventing the library. Focus will be on bare minimum a
 * Quality set to 75%, no other quality
 * No Chroma subsampling
 * Width and Height are divisible by 16
+* Only Lossy and Baseline sequential process
 * No optimisation
 * Use precomputed or provided numbers
 
