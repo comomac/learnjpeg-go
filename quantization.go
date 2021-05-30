@@ -21,7 +21,7 @@ func QuantizationTableLuminance75() *TypeQuantizationTable {
 // ref CCITTRec. T.81 (1992 E) Table K.2 p.143
 
 // Quantization Table Chrominance at 75% quality
-func QuantizationTableChrominance() *TypeQuantizationTable {
+func QuantizationTableChrominance75() *TypeQuantizationTable {
 	return zigZag(&TypeQuantizationTable{
 		17, 18, 24, 47, 99, 99, 99, 99,
 		18, 21, 26, 66, 99, 99, 99, 99,
