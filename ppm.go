@@ -77,12 +77,6 @@ outer:
 	idat := dat[q:]
 	px := []byte{} // 3 bytes makes a pixel
 	for _, b := range idat {
-		x++
-		if b == 10 {
-			x = 0
-			y++
-			continue
-		}
 		px = append(px, b)
 		if len(px) == 3 {
 			img.SetRGBA(x, y, color.RGBA{
@@ -90,7 +84,15 @@ outer:
 				G: px[1],
 				B: px[2],
 			})
+
 			px = []byte{}
+			if x == width-1 {
+				fmt.Printf("row %d has %d cols\n", y, x)
+				x = 0
+				y++
+			} else {
+				x++
+			}
 		}
 	}
 
