@@ -87,7 +87,6 @@ outer:
 
 			px = []byte{}
 			if x == width-1 {
-				fmt.Printf("row %d has %d cols\n", y, x)
 				x = 0
 				y++
 			} else {
