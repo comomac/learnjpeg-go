@@ -16,11 +16,11 @@ func jheader(w, h int) (out []byte) {
 	// luminance
 	//   Pq: Quantization table element precision. 0 = 8 bit, 0 = 16 bit
 	//   Tq: Quantization table destination identifier. 0-3
-	lum := *zigZag(QuantizationTableLuminance75())
+	lum := *QuantizationTableLuminance75()
 	dqt = append(dqt, 0x00) // Pq: 0, Tq: 0
 	dqt = append(dqt, []byte(lum[:])...)
 	// chrominance
-	chm := *zigZag(QuantizationTableLuminance75())
+	chm := *QuantizationTableLuminance75()
 	dqt = append(dqt, 0x01) // Pq: 0, Tq: 1
 	dqt = append(dqt, []byte(chm[:])...)
 	// update dqt length
