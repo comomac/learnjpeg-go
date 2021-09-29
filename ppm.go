@@ -22,7 +22,7 @@ func PPMOpenFile(fileName string) (numberOfColours int, img *image.RGBA, err err
 
 // PPMOpenFile open PPM bytes and decode it
 func PPMDecode(dat []byte) (numberOfColours int, img *image.RGBA, err error) {
-	if string(dat[0:1]) == "P6" {
+	if string(dat[0:2]) == "P6" {
 		return 0, nil, fmt.Errorf("not a PPM P6 image")
 	}
 
@@ -32,6 +32,7 @@ func PPMDecode(dat []byte) (numberOfColours int, img *image.RGBA, err error) {
 	h := ""         // height
 	b := ""         // colour max
 	q := 0          // position of first image byte
+	// detect image dimension and colours
 outer:
 	for i, a := range dat[0:14] {
 		q = i
