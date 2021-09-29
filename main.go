@@ -7,7 +7,9 @@ import (
 
 func main() {
 	// readPPM()
-	saveJPG()
+	a := jheader(1, 2)
+	fmt.Printf("%d  %+v\n", len(a), a)
+	//saveJPG()
 }
 
 func readPPM() {

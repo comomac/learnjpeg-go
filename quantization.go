@@ -1,8 +1,15 @@
 package main
 
-type TypeQuantizationTable [64]int
+type TypeQuantizationTable [64]uint8
 
 // ref CCITTRec. T.81 (1992 E) Table K.1 p.143
+
+// Note: the K.1 states that
+//  "If these quantization values are divided by 2,
+//   the resulting reconstructed image is usually nearly
+//   indistinguishable from the source image."
+//
+// +ref https://github.com/libjpeg-turbo/ijg/blob/main/jcparam.c#L64
 
 // Quantization Table Luminance at 75% quality
 func QuantizationTableLuminance75() *TypeQuantizationTable {
